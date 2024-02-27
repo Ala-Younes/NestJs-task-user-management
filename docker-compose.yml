@@ -4,11 +4,13 @@ services:
     image: postgres
     container_name: local_pgdb
     restart: always
+    env_file:
+      - .env
     ports:
       - '5435:5432'
     environment:
-      POSTGRES_USER: user-name
-      POSTGRES_PASSWORD: strong-password
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - local_pgdata:/var/lib/postgresql/data
   pgadmin:

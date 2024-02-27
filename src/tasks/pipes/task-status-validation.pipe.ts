@@ -1,5 +1,5 @@
 import { BadRequestException, PipeTransform } from '@nestjs/common';
-import { TaskStatus } from '../task-status.enum';
+import { TaskStatus } from '@prisma/client';
 
 export class TaskStatusValidationPipe implements PipeTransform {
   readonly allowedStatuses = [
