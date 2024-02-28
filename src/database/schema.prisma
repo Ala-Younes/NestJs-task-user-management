@@ -25,3 +25,10 @@ model Task {
   description  String
   status TaskStatus
 }
+
+model User {
+  id    Int     @default(autoincrement()) @id
+  username String @unique
+  password String
+  salt String
+}
